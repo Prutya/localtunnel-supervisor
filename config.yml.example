@@ -1,7 +1,7 @@
 frontend:
-  domain: frontend-4e3faee17da1
+  subdomain: frontend-4e3faee17da1
   port:   4000
 
 backend:
-  domain: backend-4e3faee17da1
+  subdomain: backend-4e3faee17da1
   port:   3000

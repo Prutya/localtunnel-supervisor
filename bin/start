@@ -1,0 +1,16 @@
+#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/tunnel_supervisor'
+
+supervisor = TunnelSupervisor.new(
+  YAML.load_file(
+    File.join(
+      File.expand_path('..', __dir__),
+      'config.yml'
+    )
+  ),
+  log: Logger.new(STDOUT, level: ENV['LOG_LEVEL'] || 'INFO')
+)
+
+supervisor.start!.monitor!
